@@ -9,10 +9,9 @@
             return true;
         }
 
-        public static BusinessException Second()
+        public static void Second()
         {
-            BusinessException businessException = new BusinessException("Skipped logic in method : Second");
-            return businessException;
+            throw new BusinessException("Skipped logic in method : Second");
         }
 
         public static void Third()

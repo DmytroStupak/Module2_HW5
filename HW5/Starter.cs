@@ -25,17 +25,12 @@
                     case 2:
                         try
                         {
-                            var res = Actions.Second();
-                            if (res is BusinessException)
-                            {
-                                Logger log = Logger.Instance;
-                                log.LogWrite(new LogType(LogType.Log.Warning, $"Action got this custom Exception : {res.Message}"));
-                            }
+                            Actions.Second();
                         }
-                        catch (Exception ex)
+                        catch (BusinessException ex)
                         {
                             Logger log = Logger.Instance;
-                            log.LogWrite(new LogType(LogType.Log.Error, $"Action failed by a reason : {ex.Message}"));
+                            log.LogWrite(new LogType(LogType.Log.Warning, $"Action failed by a reason : {ex.Message}"));
                         }
 
                         break;
